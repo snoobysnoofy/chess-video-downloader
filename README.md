@@ -2,7 +2,6 @@
 
 ### Requirements
 
-- Bash shell (Linux or macOS)
 - cURL (command-line tool for making HTTP requests)
 - wget (command-line tool for downloading files)
 - pup (HTML parsing tool) - Install from: [https://github.com/ericchiang/pup](https://github.com/ericchiang/pup)
@@ -12,7 +11,7 @@
 1. Open a terminal.
 2. Run the following command:
 ```
-./chessdl.sh https://www.example.com/lessons/name
+./chessdl.sh "video_or_lesson_url"
 ```
 
 
@@ -30,7 +29,7 @@
 ```
 python chessdl.py
 ```
-3. Enter the URL of the page containing the lesson videos when prompted.
+3. Enter the URL of the video or lesson you want to download.
 
 4. The script will start downloading the lesson videos to a new directory in the current working directory.
 
