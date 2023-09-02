@@ -1,5 +1,7 @@
 #!/bin/bash
 
+counter=1
+
 download_lesson() {
     local lesson_url=$1
     local lesson_page=$(curl -s "$lesson_url")
@@ -24,10 +26,14 @@ download_video() {
 
     echo "Downloading: $vid_title"
     local sanitized_title=$(echo "$vid_title" | cut -d "|" -f 1 | sed 's/ *$//')
-    wget --show-progress "$vid_link" -O "$sanitized_title.mp4"
+    local filename="${counter}_${sanitized_title}.mp4"
+
+    wget --show-progress "$vid_link" -O "$filename" 
 
     echo "Sleeping..."
     sleep 10
+
+    ((counter++))
 }
 
 main() {
